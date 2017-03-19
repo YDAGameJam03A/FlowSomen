@@ -32,7 +32,18 @@ public class GameManager : MonoBehaviour {
         new GSClear()
     };
 
-    int score = 0;
+    int Score = 0;
+    public int score
+    {
+        get
+        {
+            return Score;
+        }
+        set
+        {
+            Score = score;
+        }
+    }
     int Life = 5;
     public int life
     {
@@ -51,7 +62,6 @@ public class GameManager : MonoBehaviour {
     }
     GAMESTATE gameState = GAMESTATE.INIT;
 
-    [SerializeField]
     SomenFactory somenFactory;
     public SomenFactory somenfactory
     {
@@ -60,13 +70,22 @@ public class GameManager : MonoBehaviour {
             return somenFactory;
         }
     }
+    //STATE.STARTCOUNTで使用するGameObject群
+    public GameObject countDownTimer;
+    public UnityEngine.UI.Text TimeCountUI;
 
-	// Use this for initialization
-	void Start () {
+    //STATE.CLEARで使用するGameObject群
+    public GameObject ClearUI;
+
+    // Use this for initialization
+    void Start () {
 		for(int i = 0; i < gameStateInstances.Length; i++)
         {
             gameStateInstances[i].SetGamemanager(this);
         }
+        somenFactory = GameObject.FindGameObjectWithTag("SomenFactory").GetComponent<SomenFactory>();
+        //countDownTimer = GameObject.FindGameObjectWithTag("CountDownTimer");
+        //TimeCountUI = GameObject.FindGameObjectWithTag("TimeCountUI").GetComponent<UnityEngine.UI.Text>();
 	}
 	
 	// Update is called once per frame

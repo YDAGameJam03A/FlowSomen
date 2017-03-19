@@ -8,9 +8,13 @@ public class TestDropDown : MonoBehaviour {
     Dropdown LinkDropDown;
     [SerializeField]
     GameManager gameManager;
+    [SerializeField]
+    GameObject testGameStarter;
 
     public void OnPress()
     {
         gameManager.SetGameDatas((GAMEDIFFCULT)LinkDropDown.value);
+        gameManager.SetGameStates(GAMESTATE.STARTCOUNT);
+        testGameStarter.SetActive(false);
     }
 }

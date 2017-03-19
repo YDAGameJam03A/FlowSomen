@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameStateChanger : MonoBehaviour {
-    [SerializeField]
+    
     GameManager ref_gameManager;
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+        ref_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ref_gameManager.SetGameStates(GAMESTATE.INIT);
