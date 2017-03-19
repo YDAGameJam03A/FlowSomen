@@ -7,6 +7,6 @@ class GSFailed : GameState{
 
     public override void Execute()
     {
-        
+        Debug.Log("Failed");
     }
 }

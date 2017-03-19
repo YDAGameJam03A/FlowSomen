@@ -5,6 +5,6 @@ using UnityEngine;
 class GSClear: GameState{
     public override void Execute()
     {
-
+        Debug.Log("Clear");
     }
 }

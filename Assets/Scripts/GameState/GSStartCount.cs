@@ -7,6 +7,6 @@ class GSStartCount : GameState {
 
     public override void Execute()
     {
-        throw new NotImplementedException();
+        Debug.Log("StartCount");
     }
 }

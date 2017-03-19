@@ -7,6 +7,6 @@ class GSInGame : GameState{
 
     public override void Execute()
     {
-        
+        Debug.Log("InGame");
     }
 }

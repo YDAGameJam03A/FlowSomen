@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract class GameState : MonoBehaviour {
+abstract class GameState {
     GameManager ref_gameManager;
 
     public void SetGamemanager(GameManager t_ref_gameManager)

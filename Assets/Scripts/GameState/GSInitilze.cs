@@ -6,6 +6,6 @@ class GSInitilze : GameState{
 
     public override void Execute()
     {
-
+        Debug.Log("Initilze");
     }
 }

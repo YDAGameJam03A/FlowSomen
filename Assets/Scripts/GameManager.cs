@@ -13,7 +13,8 @@ public enum GAMESTATE
     INIT = 0,
     STARTCOUNT,
     INGAME,
-    FAILED
+    FAILED,
+    CLEAR
 };
 
 public class GameManager : MonoBehaviour {
@@ -25,7 +26,8 @@ public class GameManager : MonoBehaviour {
         new GSInitilze(),
         new GSStartCount(),
         new GSInGame(),
-        new GSFailed()
+        new GSFailed(),
+        new GSClear()
     };
 
     int score = 0;
@@ -54,8 +56,18 @@ public class GameManager : MonoBehaviour {
         gameData = gamedataInstances[(int)diff];
     }
 
+    public void SetGameStates(GAMESTATE state)
+    {
+        gameState = state;
+    }
+
     public void DebugLogGameData()
     {
         Debug.Log("typename = " + gameData.GetType());
+    }
+
+    public void DebugLogGameState()
+    {
+        Debug.Log("statename = " + gameStateInstances[(int)gameState].GetType());
     }
 }
