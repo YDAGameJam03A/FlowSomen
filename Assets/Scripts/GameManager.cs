@@ -33,7 +33,24 @@ public class GameManager : MonoBehaviour {
     int score = 0;
     int Life = 0;
     GameDatas gameData = new GameDatas();
+    public GameDatas gameDatas
+    {
+        get
+        {
+            return gameData;
+        }
+    }
     GAMESTATE gameState = GAMESTATE.INIT;
+
+    [SerializeField]
+    SomenFactory somenFactory;
+    public SomenFactory somenfactory
+    {
+        get
+        {
+            return somenFactory;
+        }
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -56,6 +73,8 @@ public class GameManager : MonoBehaviour {
         gameData = gamedataInstances[(int)diff];
     }
 
+    
+
     public void SetGameStates(GAMESTATE state)
     {
         gameState = state;
@@ -70,4 +89,6 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log("statename = " + gameStateInstances[(int)gameState].GetType());
     }
+
+
 }
