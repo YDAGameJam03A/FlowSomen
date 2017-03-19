@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b7cfe068dbe38d64dbc0decdb4a46a41
 folderAsset: yes
 timeCreated: 1489914370
+=======
+guid: 22d0c32ef3d560d43b1ae6b8b9438198
+folderAsset: yes
+timeCreated: 1489907494
+>>>>>>> origin/sura0713
 licenseType: Free
 DefaultImporter:
   userData: 
