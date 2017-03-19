@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
             return Life;
         }
     }
-    GameDatas gameData = new GameDatas();
+    GameDatas gameData = new GDEasy();
     public GameDatas gameDatas
     {
         get
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
             return gameData;
         }
     }
-    GAMESTATE gameState = GAMESTATE.INIT;
+    GAMESTATE gameState = GAMESTATE.STARTCOUNT;
 
     SomenFactory somenFactory;
     public SomenFactory somenfactory
