@@ -20,7 +20,9 @@ public enum GAMESTATE
 public class GameManager : MonoBehaviour {
 
     GameDatas[] gamedataInstances = {
-        new GDEasy(),new GDNormal(),new GDHard()
+        new GDEasy(),
+        new GDNormal(),
+        new GDHard()
     };
     GameState[] gameStateInstances = {
         new GSInitilze(),
@@ -31,7 +33,14 @@ public class GameManager : MonoBehaviour {
     };
 
     int score = 0;
-    int Life = 0;
+    int Life = 5;
+    public int life
+    {
+        get
+        {
+            return Life;
+        }
+    }
     GameDatas gameData = new GameDatas();
     public GameDatas gameDatas
     {
@@ -90,5 +99,8 @@ public class GameManager : MonoBehaviour {
         Debug.Log("statename = " + gameStateInstances[(int)gameState].GetType());
     }
 
-
+    public void DecleaseLife()
+    {
+        Life -= 1;
+    }
 }

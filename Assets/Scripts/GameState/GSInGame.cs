@@ -9,13 +9,20 @@ class GSInGame : GameState{
     public override void Execute()
     {
         Debug.Log("InGame");
-
-        spawnTimer += Time.deltaTime;
+        //ライフがなくなった時、状態をFAILEDにし、Executeを終了
+        if (ref_gameManager.life <= 0)
+        {
+            ref_gameManager.SetGameStates(GAMESTATE.FAILED);
+            return;
+        }
+        spawnTimer += Time.deltaTime;   //時間カウントを行う
+        //スポーン時間になった場合、ソーメンをスポーンさせる
         if (spawnTimer >= ref_gameManager.gameDatas.spawnlag)
         {
             ref_gameManager.somenfactory.CreateSomen();
             ref_gameManager.gameDatas.noodlenum -= 1;
             spawnTimer = 0.0f;
         }
+        
     }
 }
