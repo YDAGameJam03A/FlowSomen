@@ -21,7 +21,7 @@ public class Spone_Noodles : MonoBehaviour
         time -= Time.deltaTime;
         if (time <= 0.0)
         {
-            time = 1.0f;
+            time = 0.5f;
             Instantiate(Noodles, new Vector3(0, 3, 0), Quaternion.identity);
 
         }
