@@ -33,6 +33,7 @@ class GSClear: GameState{
             case CLSCENESTATE.TERMINATED:
                 DataKeeper.score = ref_gameManager.score;
                 //SceneManager.LoadScene(/*リザルトシーン*/);
+                SceneMovement.openWithBackGround("Rizalute");
                 Debug.Log("Terminated");
                 break;
         }

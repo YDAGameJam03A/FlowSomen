@@ -17,7 +17,8 @@ public class Gameoverbutton : UIBehaviour
 
 	　void OnClick()
 	　{
-		　　// 「Stageserect」シーンに遷移する
-		　　SceneManager.LoadScene("Title");
+        // 「Stageserect」シーンに遷移する
+        //SceneManager.LoadScene("Title");
+        SceneMovement.openWithBackGround("Title");
 	}
 }

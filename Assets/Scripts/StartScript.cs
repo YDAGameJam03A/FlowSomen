@@ -8,7 +8,8 @@ public class StartScript : MonoBehaviour {
     private void Awake()
     {
         Screen.SetResolution(768, 1024,false);
-        SceneManager.LoadScene("Title");
+        //SceneManager.LoadScene("Title");
+        SceneMovement.openWithBackGround("Title");
     }
     //// Use this for initialization
     //void Start () {

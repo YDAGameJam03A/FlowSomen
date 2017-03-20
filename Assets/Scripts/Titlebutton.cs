@@ -17,7 +17,8 @@ public class Titlebutton : UIBehaviour
 
 	　void OnClick()
 	　{
-		　　// 「Stageserect」シーンに遷移する
-		　　SceneManager.LoadScene("Stageserect");
+        // 「Stageserect」シーンに遷移する
+        //SceneManager.LoadScene("Stageserect");
+        SceneMovement.openWithBackGround("Stageserect");
 	  }
 }
