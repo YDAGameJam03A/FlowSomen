@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b02534215eaae7347b86885b1e832d6a
 folderAsset: yes
 timeCreated: 1489938274
+=======
+guid: 411f6903702392546b3daa75d0949957
+folderAsset: yes
+timeCreated: 1489955636
+>>>>>>> 3Dモデル
 licenseType: Free
 DefaultImporter:
   userData: 
