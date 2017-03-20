@@ -11,10 +11,11 @@ public class LostArea : MonoBehaviour {
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.tag == "Somen")
         {
+            gameManager.DecleaseLife();
             Destroy(collision.gameObject, 1.0f);
         }
     }
