@@ -15,7 +15,8 @@ class GSClear: GameState{
 
     public override void Execute()
     {
-
+        float nowTime = 0.0f;
+        float sceneMoveTime = 3.0f;
         Debug.Log("Clear");
         switch (clearSceneState)
         {
@@ -23,9 +24,16 @@ class GSClear: GameState{
                 ref_gameManager.ClearUI.SetActive(true);
                 clearSceneState = CLSCENESTATE.TERMINATED;
                 break;
+            case CLSCENESTATE.LOGO:
+                if(nowTime >= sceneMoveTime)
+                {
+                    clearSceneState = CLSCENESTATE.TERMINATED;
+                }
+                break;
             case CLSCENESTATE.TERMINATED:
                 DataKeeper.score = ref_gameManager.score;
                 //SceneManager.LoadScene(/*リザルトシーン*/);
+                SceneMovement.openWithBackGround("Rizalute");
                 Debug.Log("Terminated");
                 break;
         }

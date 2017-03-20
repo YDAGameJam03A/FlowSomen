@@ -51,6 +51,7 @@ class GSStartCount : GameState {
                 {
                     ref_gameManager.countDownTimer.SetActive(false);
                     ref_gameManager.SetGameStates(GAMESTATE.INGAME);
+                    ref_gameManager.se_water.Play();
                 }
                 break;
         }

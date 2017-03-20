@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
         new GSFailed(),
         new GSClear()
     };
-
+    //スコア
     int Score = 0;
     public int score
     {
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour {
             Score = score;
         }
     }
+    //ライフ
     int Life = 5;
     public int life
     {
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour {
             return Life;
         }
     }
+    
     GameDatas gameData = new GDEasy();
     public GameDatas gameDatas
     {
@@ -60,7 +62,10 @@ public class GameManager : MonoBehaviour {
             return gameData;
         }
     }
-    GAMESTATE gameState = GAMESTATE.STARTCOUNT;
+
+
+    GAMESTATE gameState = DataKeeper.gamestate;
+
 
     SomenFactory somenFactory;
     public SomenFactory somenfactory
@@ -70,12 +75,35 @@ public class GameManager : MonoBehaviour {
             return somenFactory;
         }
     }
+
+    //INGAME中で全てのソーメンが流れ終わったか？
+    bool isFinished = false;
+    public bool isfinished
+    {
+        get
+        {
+            return isFinished;
+        }
+        set
+        {
+            isFinished = isfinished;
+        }
+    }
     //STATE.STARTCOUNTで使用するGameObject群
     public GameObject countDownTimer;
     public UnityEngine.UI.Text TimeCountUI;
 
     //STATE.CLEARで使用するGameObject群
     public GameObject ClearUI;
+
+    //STATE.INGAMEで使用するObject群
+    public LifeUI lifeUI;
+    //SE系Object群
+    public SEScript se_water;
+    public SEScript se_hashiMove;
+    public SEScript se_noodleComing;
+    //STATE.GAMEOVERで使用するObject群
+    public GameOver Gameover;
 
     // Use this for initialization
     void Start () {
@@ -84,9 +112,14 @@ public class GameManager : MonoBehaviour {
             gameStateInstances[i].SetGamemanager(this);
         }
         somenFactory = GameObject.FindGameObjectWithTag("SomenFactory").GetComponent<SomenFactory>();
+        lifeUI = GameObject.FindGameObjectWithTag("LifeUI").GetComponent<LifeUI>();
+        se_hashiMove = GameObject.Find("SE_HashiMove").GetComponent<SEScript>();
+        se_noodleComing = GameObject.Find("SE_NoodleComing").GetComponent<SEScript>();
+        se_water = GameObject.Find("SE_Water").GetComponent<SEScript>();
+        Gameover = GameObject.Find("Canvas").GetComponent<GameOver>();
         //countDownTimer = GameObject.FindGameObjectWithTag("CountDownTimer");
         //TimeCountUI = GameObject.FindGameObjectWithTag("TimeCountUI").GetComponent<UnityEngine.UI.Text>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -99,6 +132,7 @@ public class GameManager : MonoBehaviour {
     public void SetGameDatas(GAMEDIFFCULT diff)
     {
         gameData = gamedataInstances[(int)diff];
+
     }
 
     
@@ -121,5 +155,6 @@ public class GameManager : MonoBehaviour {
     public void DecleaseLife()
     {
         Life -= 1;
+        lifeUI.ChangeLifeUIText(Life);
     }
 }

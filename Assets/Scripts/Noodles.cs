@@ -10,7 +10,33 @@ public class Noodles : MonoBehaviour {
 
     public float ry = 90;           //向き  88:右レーン 
                                     //      92:左レーン
+    //箸で掴んでいるか？
+    bool isCatching = false;
+    public bool iscatching
+    {
+        get
+        {
+            return isCatching;
+        }
+        set
+        {
+            isCatching = iscatching;
+        }
+    }
+    //destroy対象か？
+    bool isNextDestroy = false;
     
+    public bool isnextdestroy {
+        get
+        {
+            return isNextDestroy;
+        }
+        set
+        {
+            isNextDestroy = isnextdestroy;
+        }
+    }
+        
 
     void Start () {
         
@@ -19,9 +45,8 @@ public class Noodles : MonoBehaviour {
     }
 	
 	void Update () {
-        
         //移動
         transform.Translate(tx * Time.deltaTime, -ty * Time.deltaTime, tz * Time.deltaTime);
-
+        
     }
 }
