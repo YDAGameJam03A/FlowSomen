@@ -30,6 +30,19 @@ static public class DataKeeper {
 
     }
 
+    static GAMESTATE gameState;
+    static public GAMESTATE gamestate
+    {
+        get
+        {
+            return gameState;
+        }
+        set
+        {
+            gameState = gamestate;
+        }
+    }
+
     static void ResetScore()
     {
         Score = 0;

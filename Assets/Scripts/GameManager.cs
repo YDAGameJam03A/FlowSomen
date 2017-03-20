@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
             return gameData;
         }
     }
-    GAMESTATE gameState = GAMESTATE.STARTCOUNT;
+    GAMESTATE gameState = DataKeeper.gamestate;
 
     SomenFactory somenFactory;
     public SomenFactory somenfactory

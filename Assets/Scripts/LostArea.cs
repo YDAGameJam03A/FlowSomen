@@ -16,10 +16,12 @@ public class LostArea : MonoBehaviour {
     {
         if(collision.tag == "Somen")
         {
+            PrevCollider = collision;
             noodle = collision.gameObject.GetComponent<Noodles>();
             
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (PrevCollider == other)
@@ -28,6 +30,7 @@ public class LostArea : MonoBehaviour {
             {
                 gameManager.DecleaseLife();
                 Destroy(other.gameObject, 2.0f);
+                PrevCollider = null;
             }
         }
         
