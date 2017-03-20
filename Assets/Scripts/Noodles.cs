@@ -12,6 +12,7 @@ public class Noodles : MonoBehaviour {
                                     //      92:左レーン
     //箸で掴んでいるか？
     bool isCatching = false;
+    public bool isRight = false;
     public bool iscatching
     {
         get

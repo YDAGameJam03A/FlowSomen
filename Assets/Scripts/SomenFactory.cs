@@ -28,6 +28,7 @@ public class SomenFactory : MonoBehaviour {
                                      rany[ran],
                                      74));
 
+        t_somen.GetComponent<Noodles>().isRight = (ran == 0) ? false : true;
         Debug.Log("prefab z = " + somenPrefab.transform.rotation.z);
     }
 }
