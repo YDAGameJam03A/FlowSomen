@@ -5,17 +5,11 @@ using UnityEngine;
 
 class GSFailed : GameState{
 
-	public GameOver Gameover;
-
-	void Start()
-	{
-		Gameover = GameObject.Find ("canvas").GetComponent<GameOver> ();
-	}
-
+	
 		
     public override void Execute()
     {
         Debug.Log("Failed");
-		Gameover.isGame_Over = 1;
+		ref_gameManager.Gameover.isGame_Over = 1;
     }
 }

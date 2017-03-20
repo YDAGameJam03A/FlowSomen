@@ -102,6 +102,8 @@ public class GameManager : MonoBehaviour {
     public SEScript se_water;
     public SEScript se_hashiMove;
     public SEScript se_noodleComing;
+    //STATE.GAMEOVERで使用するObject群
+    public GameOver Gameover;
 
     // Use this for initialization
     void Start () {
@@ -114,7 +116,7 @@ public class GameManager : MonoBehaviour {
         se_hashiMove = GameObject.Find("SE_HashiMove").GetComponent<SEScript>();
         se_noodleComing = GameObject.Find("SE_NoodleComing").GetComponent<SEScript>();
         se_water = GameObject.Find("SE_Water").GetComponent<SEScript>();
-
+        Gameover = GameObject.Find("Canvas").GetComponent<GameOver>();
         //countDownTimer = GameObject.FindGameObjectWithTag("CountDownTimer");
         //TimeCountUI = GameObject.FindGameObjectWithTag("TimeCountUI").GetComponent<UnityEngine.UI.Text>();
     }
