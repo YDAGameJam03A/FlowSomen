@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifeUI : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    Text UIText;
+
+    private void Start()
+    {
+        UIText = gameObject.GetComponent<Text>();
+    }
+
+    public void ChangeLifeUIText(int tlife)
+    {
+        UIText.text = tlife.ToString();
+    }
 }

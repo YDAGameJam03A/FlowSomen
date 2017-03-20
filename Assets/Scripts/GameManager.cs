@@ -77,6 +77,9 @@ public class GameManager : MonoBehaviour {
     //STATE.CLEARで使用するGameObject群
     public GameObject ClearUI;
 
+    //STATE.INGAMEで使用するObject群
+    public LifeUI lifeUI;
+
     // Use this for initialization
     void Start () {
 		for(int i = 0; i < gameStateInstances.Length; i++)
@@ -84,6 +87,7 @@ public class GameManager : MonoBehaviour {
             gameStateInstances[i].SetGamemanager(this);
         }
         somenFactory = GameObject.FindGameObjectWithTag("SomenFactory").GetComponent<SomenFactory>();
+        lifeUI = GameObject.FindGameObjectWithTag("LifeUI").GetComponent<LifeUI>();
         //countDownTimer = GameObject.FindGameObjectWithTag("CountDownTimer");
         //TimeCountUI = GameObject.FindGameObjectWithTag("TimeCountUI").GetComponent<UnityEngine.UI.Text>();
 	}
@@ -99,6 +103,7 @@ public class GameManager : MonoBehaviour {
     public void SetGameDatas(GAMEDIFFCULT diff)
     {
         gameData = gamedataInstances[(int)diff];
+
     }
 
     
@@ -121,5 +126,6 @@ public class GameManager : MonoBehaviour {
     public void DecleaseLife()
     {
         Life -= 1;
+        lifeUI.ChangeLifeUIText(Life);
     }
 }
