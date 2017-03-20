@@ -10,17 +10,12 @@ public class Noodles : MonoBehaviour {
 
     public float ry = 90;           //向き  88:右レーン 
                                     //      92:左レーン
-    int rum = 0;                    //レーンを決めるためのランダム
+    
 
     void Start () {
-        rum = Random.Range(0, 2);
-        switch (rum)
-        {
-            case 0: ry = 88; break;
-            case 1: ry = 92; break;
-        }
+        
 
-        transform.rotation = Quaternion.Euler(0, ry, 74);
+        //transform.rotation = Quaternion.Euler(0, ry, 74);
     }
 	
 	void Update () {
