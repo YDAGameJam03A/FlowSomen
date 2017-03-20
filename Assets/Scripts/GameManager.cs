@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
         new GSFailed(),
         new GSClear()
     };
-
+    //スコア
     int Score = 0;
     public int score
     {
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour {
             Score = score;
         }
     }
+    //ライフ
     int Life = 5;
     public int life
     {
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour {
             return Life;
         }
     }
+    
     GameDatas gameData = new GDEasy();
     public GameDatas gameDatas
     {
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour {
             return gameData;
         }
     }
+
     GAMESTATE gameState = DataKeeper.gamestate;
 
     SomenFactory somenFactory;
@@ -68,6 +71,20 @@ public class GameManager : MonoBehaviour {
         get
         {
             return somenFactory;
+        }
+    }
+
+    //INGAME中で全てのソーメンが流れ終わったか？
+    bool isFinished = false;
+    public bool isfinished
+    {
+        get
+        {
+            return isFinished;
+        }
+        set
+        {
+            isFinished = isfinished;
         }
     }
     //STATE.STARTCOUNTで使用するGameObject群
