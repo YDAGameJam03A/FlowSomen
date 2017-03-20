@@ -63,7 +63,9 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+
     GAMESTATE gameState = DataKeeper.gamestate;
+
 
     SomenFactory somenFactory;
     public SomenFactory somenfactory
