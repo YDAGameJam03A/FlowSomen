@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 479ba50f001792c4589630b9a2e000c6
 timeCreated: 1489990684
+=======
+guid: 70aa346e39bc558439d1ad33423cd683
+timeCreated: 1489988943
+>>>>>>> origin/okui
 licenseType: Free
 AudioImporter:
   serializedVersion: 6
